@@ -27,19 +27,15 @@ public class App {
 		// 写入用户
 		User[] users = new User[10];
 		User user = new User();
-		user.name = "超级管理员";
-		user.loginName = "228228";
-		user.passwd = "225225";
+		user.reg("超级管理员", "228228", "225225", "225225");	
 		users[0] = user;
 		user = new User();
-		user.name = "ChaoHe";
-		user.loginName = "ChaoHe";
-		user.passwd = "ChaoHe225";
+		user.reg("超级ChaoHe员", "ChaoHe", "ChaoHe225", "ChaoHe225");		
 		users[1] = user;
 		// 用户登录
 		User loginuser = new User();
-		loginuser.loginName = "ChaoHe";
-		loginuser.passwd = "ChaoHe225";
+		loginuser.setLoginInfo("ChaoHe", "ChaoHe225");
+		loginuser.modPasswd("ChaoHe22", "ChaoHe228", "ChaoHe228");
 		/*
 		 * System.out.println("请输入loginName"); BufferedReader buf = new
 		 * BufferedReader(new InputStreamReader(System.in)); try { loginuser.loginName =
@@ -51,16 +47,16 @@ public class App {
 		boolean flgLogin = false;
 		for (int x = 0; x < users.length; x++) {
 			// method overloading
-			if (users[x] != null && users[x].checkLogin(loginuser.loginName, loginuser.passwd)) {
+			if (users[x] != null && users[x].checkLogin(loginuser)) {
 				loginuser = users[x];
 				flgLogin = true;
 				break;
 			}
 		}
 		if (flgLogin) {
-			System.out.println(loginuser.name + "登录成功！");
+			System.out.println(loginuser.getName() + "登录成功！");
 		} else {
-			System.out.println(loginuser.loginName + "登录失败，请检查用户名，密码是否正确！");
+			System.out.println(loginuser.getLoginName() + "登录失败，请检查用户名，密码是否正确！");
 		}
 		// 写入loginuser比赛成绩
 
@@ -76,10 +72,15 @@ public class App {
 			err = game.score("提交项目评分", 200);
 			if (err.length() > 0) {
 				System.out.println(err);
+			} else {
+				// 分数被成功提交，要修改用户的分数
+				loginuser.setPoint(game);
+				System.out.println(loginuser.getPoint());
+				System.out.println(loginuser.getRank());
 			}
 		}
 		games[0] = game;
-		System.out.println(game.user.name + "同学在【" + game.project.name + "】项目中获得" + game.point + "分");
+		System.out.println(game.user.getName() + "同学在【" + game.project.name + "】项目中获得" + game.point + "分");
 		// loginuser参加第二个项目
 		game = new Game();
 		game.user = loginuser;
@@ -93,14 +94,19 @@ public class App {
 			err = game.score("提交项目2评分", 180);
 			if (err.length() > 0) {
 				System.out.println(err);
+			} else {
+				// 分数被成功提交，要修改用户的分数
+				loginuser.setPoint(game);
+				System.out.println(loginuser.getPoint());
+				System.out.println(loginuser.getRank());
 			}
 		}
 		games[1] = game;
 		// 遍历所有比赛
-		System.out.println(game.user.name + "同学在【" + game.project.name + "】项目中获得" + game.point + "分");
+		System.out.println(game.user.getName() + "同学在【" + game.project.name + "】项目中获得" + game.point + "分");
 		for (int x = 0; x < games.length; x++) {
 			if (games[x] != null) {
-				System.out.println(games[x].user.name + "同学在【" + games[x].project.name + "】项目中获得" + games[x].point + "分");
+				System.out.println(games[x].user.getName() + "同学在【" + games[x].project.name + "】项目中获得" + games[x].point + "分");
 			}
 		}
 	}

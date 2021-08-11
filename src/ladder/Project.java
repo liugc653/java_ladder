@@ -2,5 +2,6 @@ package ladder;
 
 public class Project {
 	public String name;
-	public String desc;	
+	public String desc;
+	public String status = "½øÐÐÖÐ";
 }
