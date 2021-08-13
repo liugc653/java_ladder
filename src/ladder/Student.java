@@ -6,41 +6,41 @@ public class Student extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-	// ÓÃ»§µÄÀÛ¼Æ»ı·Ö
+	// ç”¨æˆ·çš„ç´¯è®¡ç§¯åˆ†
 	private int point;
-	// ÓÃ»§ËùÔÚµÄ½×£¬Í¨¹ıpoint¼ÆËã¶øÀ´
+	// ç”¨æˆ·æ‰€åœ¨çš„é˜¶ï¼Œé€šè¿‡pointè®¡ç®—è€Œæ¥
 	private String rank;
 
-	// »ñÈ¡ÓÃ»§µ±Ç°µÄÀÛ¼Æ»ı·Ö
+	// è·å–ç”¨æˆ·å½“å‰çš„ç´¯è®¡ç§¯åˆ†
 	public int getPoint() {
 		return point;
 	}
 
-	// ÉèÖÃÓÃ»§µÄÀÛ¼Æ»ı·Ö£¬pointÊÇÓÃ»§Ò»´Î±ÈÈüµÄµÃ·Ö£¬ĞèÒªºÍÔ­»ı·ÖÀÛ¼Æ
+	// è®¾ç½®ç”¨æˆ·çš„ç´¯è®¡ç§¯åˆ†ï¼Œpointæ˜¯ç”¨æˆ·ä¸€æ¬¡æ¯”èµ›çš„å¾—åˆ†ï¼Œéœ€è¦å’ŒåŸç§¯åˆ†ç´¯è®¡
 	public String setPoint(int point) {
 		this.point = this.point + point;
 		return "";
 	}
 
-	// ÉèÖÃÓÃ»§µÄÀÛ¼Æ»ı·Ö,Ö±½Ó´«Èë±ÈÈü£¬´Ó±ÈÈüµÃ·ÖÖĞÀÛ¼Æ
+	// è®¾ç½®ç”¨æˆ·çš„ç´¯è®¡ç§¯åˆ†,ç›´æ¥ä¼ å…¥æ¯”èµ›ï¼Œä»æ¯”èµ›å¾—åˆ†ä¸­ç´¯è®¡
 	public String setPoint(Game game) {
 		if (!game.user.getLoginName().equals(this.loginName)) {
-			return "Äú´«ÈëµÄ±ÈÈüĞÅÏ¢Óëµ±Ç°ÓÃ»§²»·ûºÏ";
+			return "æ‚¨ä¼ å…¥çš„æ¯”èµ›ä¿¡æ¯ä¸å½“å‰ç”¨æˆ·ä¸ç¬¦åˆ";
 		}
-		if (game.project.status != "½øĞĞÖĞ") {
-			return "±§Ç¸£¬ÄúÌá½»µÄÏîÄ¿ĞÅÏ¢ÒÑ¾­½áÊø£¬²»ÄÜÔÙ´«Èëpoint";
+		if (game.project.status != "è¿›è¡Œä¸­") {
+			return "æŠ±æ­‰ï¼Œæ‚¨æäº¤çš„é¡¹ç›®ä¿¡æ¯å·²ç»ç»“æŸï¼Œä¸èƒ½å†ä¼ å…¥point";
 		}
 		this.point = this.point + game.point;
 		return "";
 	}
 
-	// ¸ù¾İµ±Ç°»ı·Ö£¬ÊµÊ±¼ÆËãÓÃ»§µÄRank
+	// æ ¹æ®å½“å‰ç§¯åˆ†ï¼Œå®æ—¶è®¡ç®—ç”¨æˆ·çš„Rank
 	public String getRank() {
 		if (point >= 100 && point < 300) {
-			return "ÇàÍ­";
+			return "é’é“œ";
 		} else if (point >= 300) {
-			return "°×Òø";
+			return "ç™½é“¶";
 		}
-		return "Î´Öª";
+		return "æœªçŸ¥";
 	}
 }

@@ -8,33 +8,33 @@ public class App {
 	public static Game[] games = new Game[10];
 
 	public static void main(String[] args) {
-		// Ğ´ÈëÏîÄ¿
+		// å†™å…¥é¡¹ç›®
 		Project[] projects = new Project[10];
 		Project proj = new Project();
-		proj.name = "¹¹ÖşÊµÑµ»·¾³";
-		proj.desc = "´ó¼ÒĞèÒªÒÀ´Î×°ºÃÒÔÏÂ»·¾³";
+		proj.name = "æ„ç­‘å®è®­ç¯å¢ƒ";
+		proj.desc = "å¤§å®¶éœ€è¦ä¾æ¬¡è£…å¥½ä»¥ä¸‹ç¯å¢ƒ";
 		projects[0] = proj;
 		proj = new Project();
-		proj.name = "Ë¼Î¬µ¼Í¼";
-		proj.desc = "ÕÒ³ö¹Ø¼üÀà¼°ÆäÊôĞÔ£¬ĞĞÎª";
+		proj.name = "æ€ç»´å¯¼å›¾";
+		proj.desc = "æ‰¾å‡ºå…³é”®ç±»åŠå…¶å±æ€§ï¼Œè¡Œä¸º";
 		projects[1] = proj;
-		// ±éÀúÃ¿¸öÏîÄ¿
+		// éå†æ¯ä¸ªé¡¹ç›®
 		for (int x = 0; x < projects.length; x++) {
 			if (projects[x] != null) {
 				System.out.println(projects[x].name);
 			}
 		}
-		// Ğ´ÈëÓÃ»§
+		// å†™å…¥ç”¨æˆ·
 		User[] users = new User[10];
 		User user = new Teacher("Admin");
-		user.reg("³¬¼¶¹ÜÀíÔ±", "228228", "225225", "225225");
+		user.reg("è¶…çº§ç®¡ç†å‘˜", "228228", "225225", "225225");
 		users[1] = user;
 		user = new Student("");
-		user.reg("³¬¼¶ChaoHe", "ChaoHe", "ChaoHe225", "ChaoHe225");
+		user.reg("è¶…çº§ChaoHe", "ChaoHe", "ChaoHe225", "ChaoHe225");
 		users[0] = user;
-		// ½ÌÊ¦µÇÂ¼-userTypeÊÇ¹ÜÀíÔ±µÄ½ÌÊ¦²ÅÄÜµÇÂ¼³É¹¦£¬Èç¹û¹¹ÔìÊ±½«userTypeÉèÖÃ³É£¡=Admin£¬¼´Ê¹ÓÃ»§Ãû£¬ÃÜÂëÕıÈ·ÔòÎŞ·¨µÇÂ¼³É¹¦
+		// æ•™å¸ˆç™»å½•-userTypeæ˜¯ç®¡ç†å‘˜çš„æ•™å¸ˆæ‰èƒ½ç™»å½•æˆåŠŸï¼Œå¦‚æœæ„é€ æ—¶å°†userTypeè®¾ç½®æˆï¼=Adminï¼Œå³ä½¿ç”¨æˆ·åï¼Œå¯†ç æ­£ç¡®åˆ™æ— æ³•ç™»å½•æˆåŠŸ
 		User teacher = new Teacher("");
-		teacher.reg("³¬¼¶¹ÜÀíÔ±", "228228", "225225", "225225");
+		teacher.reg("è¶…çº§ç®¡ç†å‘˜", "228228", "225225", "225225");
 		teacher.setLoginInfo("228228", "225225");
 		boolean teacherLogin = false;
 		for (int x = 0; x < users.length; x++) {
@@ -45,11 +45,11 @@ public class App {
 			}
 		}
 		if (teacherLogin) {
-			System.out.println(teacher.getName() + "µÇÂ¼³É¹¦£¡");
+			System.out.println(teacher.getName() + "ç™»å½•æˆåŠŸï¼");
 		} else {
-			System.out.println(teacher.getLoginName() + "µÇÂ¼Ê§°Ü£¬Çë¼ì²éÓÃ»§Ãû£¬ÃÜÂëÊÇ·ñÕıÈ·£¡");
+			System.out.println(teacher.getLoginName() + "ç™»å½•å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç”¨æˆ·åï¼Œå¯†ç æ˜¯å¦æ­£ç¡®ï¼");
 		}
-		// ÓÃ»§µÇÂ¼
+		// ç”¨æˆ·ç™»å½•
 		Student loginuser = new Student("");
 		loginuser.reg("ChaoHe", "ChaoHe", "ChaoHe225", "ChaoHe225");
 		loginuser.setLoginInfo("ChaoHe", "ChaoHe225");
@@ -63,68 +63,70 @@ public class App {
 			}
 		}
 		if (flgLogin) {
-			System.out.println(loginuser.getName() + "µÇÂ¼³É¹¦£¡");
+			System.out.println(loginuser.getName() + "ç™»å½•æˆåŠŸï¼");
 		} else {
-			System.out.println(loginuser.getLoginName() + "µÇÂ¼Ê§°Ü£¬Çë¼ì²éÓÃ»§Ãû£¬ÃÜÂëÊÇ·ñÕıÈ·£¡");
+			System.out.println(loginuser.getLoginName() + "ç™»å½•å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç”¨æˆ·åï¼Œå¯†ç æ˜¯å¦æ­£ç¡®ï¼");
 		}
+
 		/*
-		 * System.out.println("ÇëÊäÈëloginName"); BufferedReader buf = new
+		 * System.out.println("è¯·è¾“å…¥loginName"); BufferedReader buf = new
 		 * BufferedReader(new InputStreamReader(System.in)); try { loginuser.loginName =
 		 * buf.readLine(); } catch (IOException e) { e.printStackTrace(); }
-		 * System.out.println("ÇëÊäÈëpasswd"); buf = new BufferedReader(new
+		 * System.out.println("è¯·è¾“å…¥passwd"); buf = new BufferedReader(new
 		 * InputStreamReader(System.in)); try { loginuser.passwd = buf.readLine(); }
 		 * catch (IOException e) { e.printStackTrace(); }
-		 */		
-		// Ğ´Èëloginuser±ÈÈü³É¼¨
+		 */
+
+		// å†™å…¥loginuseræ¯”èµ›æˆç»©
 
 		Game game = new Game();
 		game.user = loginuser;
 		game.project = projects[0];
-		// loginuserÌá½»ÏîÄ¿
-		String err = game.submit("loginuserÌá½»ÏîÄ¿");
+		// loginuseræäº¤é¡¹ç›®
+		String err = game.submit("loginuseræäº¤é¡¹ç›®");
 		if (err.length() > 0) {
 			System.out.println(err);
 		} else {
-			// ¸øloginuserÆÀ·Ö
-			err = game.score("Ìá½»ÏîÄ¿ÆÀ·Ö", 200);
+			// ç»™loginuserè¯„åˆ†
+			err = game.score("æäº¤é¡¹ç›®è¯„åˆ†", 200);
 			if (err.length() > 0) {
 				System.out.println(err);
 			} else {
-				// ·ÖÊı±»³É¹¦Ìá½»£¬ÒªĞŞ¸ÄÓÃ»§µÄ·ÖÊı
+				// åˆ†æ•°è¢«æˆåŠŸæäº¤ï¼Œè¦ä¿®æ”¹ç”¨æˆ·çš„åˆ†æ•°
 				loginuser.setPoint(game);
 				System.out.println(loginuser.getPoint());
 				System.out.println(loginuser.getRank());
 			}
 		}
 		games[0] = game;
-		System.out.println(game.user.getName() + "Í¬Ñ§ÔÚ¡¾" + game.project.name + "¡¿ÏîÄ¿ÖĞ»ñµÃ" + game.point + "·Ö");
-		// loginuser²Î¼ÓµÚ¶ş¸öÏîÄ¿
+		System.out.println(game.user.getName() + "åŒå­¦åœ¨ã€" + game.project.name + "ã€‘é¡¹ç›®ä¸­è·å¾—" + game.point + "åˆ†");
+		// loginuserå‚åŠ ç¬¬äºŒä¸ªé¡¹ç›®
 		game = new Game();
 		game.user = loginuser;
 		game.project = projects[1];
-		// loginuserÌá½»ÏîÄ¿
-		err = game.submit("loginuserÌá½»ÏîÄ¿2");
+		// loginuseræäº¤é¡¹ç›®
+		err = game.submit("loginuseræäº¤é¡¹ç›®2");
 		if (err.length() > 0) {
 			System.out.println(err);
 		} else {
-			// ¸øloginuserÆÀ·Ö
-			err = game.score("Ìá½»ÏîÄ¿2ÆÀ·Ö", 180);
+			// ç»™loginuserè¯„åˆ†
+			err = game.score("æäº¤é¡¹ç›®2è¯„åˆ†", 180);
 			if (err.length() > 0) {
 				System.out.println(err);
 			} else {
-				// ·ÖÊı±»³É¹¦Ìá½»£¬ÒªĞŞ¸ÄÓÃ»§µÄ·ÖÊı
+				// åˆ†æ•°è¢«æˆåŠŸæäº¤ï¼Œè¦ä¿®æ”¹ç”¨æˆ·çš„åˆ†æ•°
 				loginuser.setPoint(game);
 				System.out.println(loginuser.getPoint());
 				System.out.println(loginuser.getRank());
 			}
 		}
 		games[1] = game;
-		// ±éÀúËùÓĞ±ÈÈü
-		System.out.println(game.user.getName() + "Í¬Ñ§ÔÚ¡¾" + game.project.name + "¡¿ÏîÄ¿ÖĞ»ñµÃ" + game.point + "·Ö");
+		// éå†æ‰€æœ‰æ¯”èµ›
+		System.out.println(game.user.getName() + "åŒå­¦åœ¨ã€" + game.project.name + "ã€‘é¡¹ç›®ä¸­è·å¾—" + game.point + "åˆ†");
 		for (int x = 0; x < games.length; x++) {
 			if (games[x] != null) {
 				System.out.println(
-						games[x].user.getName() + "Í¬Ñ§ÔÚ¡¾" + games[x].project.name + "¡¿ÏîÄ¿ÖĞ»ñµÃ" + games[x].point + "·Ö");
+						games[x].user.getName() + "åŒå­¦åœ¨ã€" + games[x].project.name + "ã€‘é¡¹ç›®ä¸­è·å¾—" + games[x].point + "åˆ†");
 			}
 		}
 	}

@@ -1,79 +1,79 @@
 package ladder;
 
 public class User {
-	// ÓÃ»§µÄêÇ³Æ
+	// ç”¨æˆ·çš„æ˜µç§°
 	protected String name;
-	// ÓÃ»§µÄµÇÂ¼Ãû
+	// ç”¨æˆ·çš„ç™»å½•å
 	protected String loginName;
-	// ÓÃ»§µÄµÇÂ¼ÃÜÂë
+	// ç”¨æˆ·çš„ç™»å½•å¯†ç 
 	protected String passwd;
-	// ÓÃ»§µÄÀàĞÍ
+	// ç”¨æˆ·çš„ç±»å‹
 	protected String userType;
 	
 	User(String userType) {
 	    this.userType = userType;
 	}
 
-	// ÓÃ»§×¢²á£¬ÓÃÓÚ³õÊ¼»¯ÓÃ»§
+	// ç”¨æˆ·æ³¨å†Œï¼Œç”¨äºåˆå§‹åŒ–ç”¨æˆ·
 	public String reg(String name, String loginName, String passwd, String rePasswd) {
 		if (name.length() < 2) {
-			return "ÓÃ»§Ãû²»·ûºÏ¹æ·¶";
+			return "ç”¨æˆ·åä¸ç¬¦åˆè§„èŒƒ";
 		}
 		if (!passwd.equals(rePasswd)) {
-			return "Äú2´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ";
+			return "æ‚¨2æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´";
 		}
-		// ºÃ¶àÑéÖ¤
+		// å¥½å¤šéªŒè¯
 		this.name = name;
 		this.loginName = loginName;
 		this.passwd = passwd;
 		return "";
 	}
 
-	// »ñÈ¡ÓÃ»§Ãû
+	// è·å–ç”¨æˆ·å
 	public String getName() {
 		return name;
 	}
 
-	// »ñÈ¡µÇÂ¼Ãû
+	// è·å–ç™»å½•å
 	public String getLoginName() {
 		return loginName;
 	}
 
-	// ÉèÖÃµÇÂ¼ĞÅÏ¢£¬ÓÃÓÚµÇÂ¼
+	// è®¾ç½®ç™»å½•ä¿¡æ¯ï¼Œç”¨äºç™»å½•
 	public String setLoginInfo(String loginName, String passwd) {
 		this.loginName = loginName;
 		this.passwd = passwd;
 		return "";
 	}
 
-	// ĞŞ¸ÄÓÃ»§Ãû
+	// ä¿®æ”¹ç”¨æˆ·å
 	public String modName(String name) {
 		if (name.length() < 2) {
-			return "ÓÃ»§Ãû²»·ûºÏ¹æ·¶";
+			return "ç”¨æˆ·åä¸ç¬¦åˆè§„èŒƒ";
 		}
 		if (this.name.equals(name)) {
-			return "ÓÃ»§Ãû²»ÄÜºÍÏÖÓĞµÄÓÃ»§ÃûÒ»Ñù";
+			return "ç”¨æˆ·åä¸èƒ½å’Œç°æœ‰çš„ç”¨æˆ·åä¸€æ ·";
 		}
 		this.name = name;
 		return "";
 	}
 
-	// ĞŞ¸ÄÓÃ»§ÃÜÂë
+	// ä¿®æ”¹ç”¨æˆ·å¯†ç 
 	public String modPasswd(String oldPasswd, String newPasswd, String rePasswd) {
 		if (newPasswd.length() < 8) {
-			return "ÃÜÂë²»·ûºÏ¹æ·¶";
+			return "å¯†ç ä¸ç¬¦åˆè§„èŒƒ";
 		}
 		if (!this.passwd.equals(oldPasswd)) {
-			return "ÄúÊäÈëµÄ¾ÉÃÜÂëºÍÏÖÓĞÃÜÂë²»Ò»ÖÂ";
+			return "æ‚¨è¾“å…¥çš„æ—§å¯†ç å’Œç°æœ‰å¯†ç ä¸ä¸€è‡´";
 		}
 		if (!newPasswd.equals(rePasswd)) {
-			return "Äú2´ÎÊäÈëµÄÃÜÂë²»Ò»ÖÂ";
+			return "æ‚¨2æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€è‡´";
 		}
 		this.passwd = newPasswd;
 		return "";
 	}
 
-	// ¼ì²âÓÃ»§µÇÂ¼ĞÅÏ¢
+	// æ£€æµ‹ç”¨æˆ·ç™»å½•ä¿¡æ¯
 	public boolean checkLogin(String loginName, String passwd) {
 		if (loginName.equals(this.loginName) && passwd.equals(this.passwd)) {
 			return true;
@@ -82,7 +82,7 @@ public class User {
 		}
 	}
 
-	// ¼ì²âÓÃ»§µÇÂ¼ĞÅÏ¢
+	// æ£€æµ‹ç”¨æˆ·ç™»å½•ä¿¡æ¯
 	public boolean checkLogin(User user) {
 		if (user.loginName.equals(this.loginName) && user.passwd.equals(this.passwd)) {
 			return true;

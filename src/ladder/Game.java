@@ -10,7 +10,7 @@ public class Game {
 	
 	public String submit(String desc) {
 		if (desc.length() < 5) {
-			return "ÄúÊäÈëµÄÏîÄ¿ÃèÊöĞÅÏ¢Ì«¶Ì";
+			return "æ‚¨è¾“å…¥çš„é¡¹ç›®æè¿°ä¿¡æ¯å¤ªçŸ­";
 		} else {
 			this.desc = desc;
 			return "";
@@ -19,9 +19,9 @@ public class Game {
 	
 	public String score(String comment, int point) {
 		if (comment.length() < 5) {
-			return "ÄúÊäÈëµÄÏîÄ¿ÆÀÂÛĞÅÏ¢Ì«¶Ì";
+			return "æ‚¨è¾“å…¥çš„é¡¹ç›®è¯„è®ºä¿¡æ¯å¤ªçŸ­";
 		} else if (point < 0 || point > 200) {
-			return "ÄúÊäÈëµÄÆÀ·Ö±ØĞëÔÚ0-200·ÖÖ®¼ä";
+			return "æ‚¨è¾“å…¥çš„è¯„åˆ†å¿…é¡»åœ¨0-200åˆ†ä¹‹é—´";
 		} else {
 			this.comment = comment;
 			this.point = point;
